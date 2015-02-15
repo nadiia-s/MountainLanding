@@ -1,0 +1,482 @@
+/*FONTELLO styles*/
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?25980605');
+  src: url('../font/fontello.eot?25980605#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?25980605') format('woff'),
+       url('../font/fontello.ttf?25980605') format('truetype'),
+       url('../font/fontello.svg?25980605#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?25980605#fontello') format('svg');
+  }
+}
+*/
+  [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-mail-alt:before { content: '\e800'; } /* '' */
+.icon-twitter:before { content: '\e801'; } /* '' */
+.icon-facebook:before { content: '\e802'; } /* '' */
+
+/*HOVER styles*/
+
+/*Button transition*/
+/* Ripple Out */
+@-webkit-keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+@keyframes hvr-ripple-out {
+  100% {
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+.hvr-ripple-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+.hvr-ripple-out:before {
+  content: '';
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  /*border: #e1e1e1 solid 6px;*/
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.hvr-ripple-out:hover:before, .hvr-ripple-out:focus:before, .hvr-ripple-out:active:before {
+  -webkit-animation-name: hvr-ripple-out;
+  animation-name: hvr-ripple-out;
+}
+/* Outline Out */
+.hvr-outline-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+.hvr-outline-out:before {
+  content: '';
+  position: absolute; 
+  border-radius: 30px;
+  border: 2px solid #0ebfdd;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: top, right, bottom, left;
+  transition-property: top, right, bottom, left;
+}
+.hvr-outline-out:hover:before, .hvr-outline-out:focus:before, .hvr-outline-out:active:before {
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  border-radius: 30px;
+}
+
+/* MENU - underline */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 50%;
+  bottom: 10px;
+  background: #fff;
+  height: 1px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+/*LOGOTYPE-transition*/
+@-webkit-keyframes hvr-pulse-shrink {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse-shrink {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse-shrink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-pulse-shrink:hover, .hvr-pulse-shrink:focus, .hvr-pulse-shrink:active {
+  -webkit-animation-name: hvr-pulse-shrink;
+  animation-name: hvr-pulse-shrink;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+
+
+
+
+
+/*Main styles*/
+body{
+	background:url(../images/bg.png) center top fixed;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+a {
+	text-decoration: none;
+}
+ul{
+	margin: 0;
+	padding:0;
+}
+h2{
+	margin: 0 auto;
+	width: 940px;
+	text-align: center;	
+	font-weight:900;
+	font-size: 24px;
+	color: #f7fdfe;
+}
+p{
+	margin: 0 auto;
+	width: 820px;
+	text-align: center;
+	font-size: 20px;
+	color: #f7fdfe;
+}
+.header, .footer{
+	font-family: 'Quicksand' sans-serif;
+	font-weight:700;
+}
+.mission, .about, .team{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight:400;
+}
+
+
+
+/*SPECIAL STYLES*/
+
+/*HEADER*/
+
+header{
+	position:fixed;	
+	z-index: 999;
+	display:block;
+	height:80px;
+	width: 100%;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.8);
+}
+.header{	
+	margin:0 auto;
+	width:940px;
+}
+/*Header-LOGOTYPE*/
+.logo{
+	margin-top:28px;
+}
+/*Header-SIGNIN-button*/
+.button_signin{
+	display: block;
+	float: right;
+	margin-top: 20px;
+	width: 124px;
+	line-height: 40px;
+	background-color: #0ebfdd;
+	border-radius: 20px;
+	text-align: center;	
+	font-size: 12px;	
+	color: #fff;
+	font-weight:400;
+	text-transform: uppercase;
+}
+
+/*Header-NAVIGATION*/
+.nav{
+	float: right;
+	margin-right: 25px;
+	margin-top: 34px;	
+	font-size:14px;
+	color:#82868f;
+	text-transform: uppercase;
+}
+.nav li{
+	list-style: none;
+	float: left;
+}
+.nav li+li{
+	margin-left: 35px;
+}
+.nav li a{
+	color:#82868f;
+}
+.nav li a:hover, .nav li a:active, .nav li a:focus{
+	color:#0ebfdd;
+}
+
+
+
+/*MISSION*/
+
+.mission{
+	display: inline-block;
+	margin: 0 auto;
+	width: 100%;
+	height: 600px;
+}
+.h2_mission{
+	margin-top: 405px;
+}
+.p_mission{
+	margin-top: 32px;
+}
+
+
+/*ABOUT*/
+
+.about{
+	display: inline-block;
+	height:250px;
+	width: 100%;
+	background: #fff;
+}
+.h2_about{
+	margin-top: 67px;
+	color:#0ebfdd;
+}
+.p_about{
+	margin-top: 32px;
+	color:#45494d;
+}
+
+
+/*TEAM*/
+
+.team{
+	display:inline-block;
+	height:600px;
+	width: 100%;
+	background: #0ebfdd;
+}
+.h2_team{
+	margin-top: 59px;
+	color:#fff;
+}
+.person-wrapper{
+	overflow: hidden;
+	margin: 0 auto;
+	width:960px;
+	margin-top: 107px;
+	margin-bottom: 105px;
+	text-align: center;
+	vertical-align: middle;
+}
+.person{
+	display:inline-block;
+}
+.person+.person{
+	margin-left: 70px;
+}
+.name{
+	margin-top: 15px;	
+	font-size:18px;
+	font-weight:600;
+	color:#fff;
+}
+.position{
+	margin-top: 5px;
+	font-size:16px;
+	font-style: oblique;
+	color:#fff;
+}
+/*TEAM-button*/
+.button_work{
+	display:block;
+	margin: 0 auto;
+	width: 180px;
+	line-height: 50px;
+	background-color: transparent;
+	border-radius: 25px;
+	text-align: center;	
+	font-size: 14px;	
+	color: #fff;
+	text-transform: uppercase;
+}
+.button_work:hover{
+	background-color: #fff;
+	color: #0ebfdd;
+}
+
+
+/*MAP*/
+
+#Nadya_S_map{
+	width: 100%;
+	height: 600px;
+	margin: 0 auto;
+	background-color: #CCC;
+}
+
+
+/*FOOTER*/
+
+.footer{
+	display: inline-block;
+	height:120px;
+	width: 100%;
+	background: #45494d;
+	padding-top: 20px; padding-bottom: 13px;
+}	
+.footer_wrapper{	
+	margin:0 auto;
+	width:940px;
+	overflow: hidden;
+}
+.footer_top{
+	display: block;
+	margin-bottom: 14px; 
+	border-bottom: 1px solid #8a8d91;	
+}
+/*Footer-NAVIGATION*/
+.f_nav{
+	display:inline-block;
+	font-size:12px;
+	color:#d7dee4;	
+	line-height: 40px;
+	margin-bottom:15px; 
+	text-transform: uppercase;
+}
+.f_nav a+a{
+	margin-left: 32px;
+}
+.f_nav a{
+	color:#d7dee4;
+}
+.f_nav a:hover, .f_nav a:active{
+	color:#fff;
+}
+/*Footer-SOCIAL*/
+.f_social{
+	float: right;
+}
+.f_social a+a{
+	margin-left: 32px;
+}
+.f_social a{
+	display: inline-block;
+	width: 40px;
+	line-height: 40px;
+	border: 1px #fff solid;
+	border-radius:20px;
+	text-align: center;
+	color: #d7dee4;
+}
+.f_social a:hover, .f_social a:active{
+	border-color: transparent;
+	background-color: #d7dee4;
+	color: #45494d;
+}
+
+.footer-bottom {
+	font-size: 12px; 
+	text-align: right;
+	font-family: sans-serif;
+	color:#73767a;
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Mountains_template</title>
+	
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+
+	<!-- HEADER fixed transparent-->
+	<header>
+		<div class="header">
+			<a class="hvr-pulse-shrink"><img class="logo" src="images/logo.png"></a>
+			<a class="button_signin hvr-outline-out" href="#Nadya_S_map">OUR LOCATION</a>
+			<ul class="nav">
+				<li><a href="#mission">OUR MISSION</a></li>
+				<li><a href="#about">ABOUT US</a></li>
+				<li><a href="#team">OUR TEAM</a></li>
+			</ul>
+		</div>
+	</header>
+	
+	<!-- MISSION-section -->
+	<div id="mission" class="mission">
+			<h2 class="h2_mission"> &#9733 Our Mission &#9733</h2>
+			<p class="p_mission">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.</p>
+	</div>
+	
+
+	<!-- ABOUT-section -->
+	<div id="about" class="about">
+		<h2 class="h2_about">About</h2>
+		<p class="p_about">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.</p>
+	</div>
+
+
+	<!-- TEAM-section -->
+	<div id="team" class="team">
+		<h2 class="h2_team">Team</h2>
+		<div class="person-wrapper">
+			<div class="person">
+				<a class="pic" href="#"><img src="images/person1.png"></a>
+				<a href="#">
+					<div class="name">John Doe</div>
+					<div class="position">Founder &#38 CEO</div></a>
+			</div>
+			<div class="person">
+				<a class="pic" href="#"><img src="images/person2.png"></a>
+				<a  href="#">
+					<div class="name">John Doe</div>
+					<div class="position">Co- Founder</div></a>
+			</div>
+			<div class="person">
+				<a class="pic" href="#"><img src="images/person3.png"></a>
+				<a href="#">
+					<div class="name">John Doe</div>
+					<div class="position">Investor</div>
+				</a>
+			</div>			
+		</div>
+		<a class="button_work hvr-ripple-out">WORK WITH US</a>
+	</div>
+
+
+	<!-- MAP-section -->
+	<div id="Nadya_S_map"></div>
+
+
+	<!-- FOOTER-section -->
+	<footer class="footer">
+		<div class="footer_wrapper">
+			<div class="footer_top">
+				<div class="f_nav">
+					<a href="#mission" class="hvr-underline-from-center">OUR MISSION</a>
+					<a href="#about" class="hvr-underline-from-center">ABOUT US</a>
+					<a href="#team" class="hvr-underline-from-center">OUR TEAM</a>
+					<a href="#map-canvas" class="hvr-underline-from-center">OUR LOCATION</a>
+				</div>
+				<div class="f_social">
+					<a class="icon-mail-alt"></a>
+					<a class="icon-twitter"></a>
+					<a class="icon-facebook"></a>
+				</div>
+			</div>
+			<div class="footer-bottom">Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp;Terms and Conditions&nbsp;&nbsp;|&nbsp;&nbsp;© Company.LLC 2014
+	    	</div>
+	    </div>
+	</footer>
+
+
+
+       <!-- SOFT SCROLL script -->
+
+		<script>
+		$(function() {
+		  $('a[href*=#]:not([href=#])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top - 80
+		        }, 1000);
+		        return false;
+		      }
+		    }
+		  });
+		});
+		</script>
+
+
+
+       <!-- MAP script -->
+
+		<script src='https://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js'></script>
+		<script> 
+		    google.maps.event.addDomListener(window, 'load', init);
+		    var map;
+		    function init() {
+		        var mapOptions = {
+		            center: new google.maps.LatLng(49.999138,36.24614),
+		            zoom: 16,
+		            zoomControl: true,
+		            zoomControlOptions: {
+		                style: google.maps.ZoomControlStyle.SMALL,
+		            },
+		            disableDoubleClickZoom: true,
+		            mapTypeControl: true,
+		            mapTypeControlOptions: {
+		                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+		            },
+		            scaleControl: true,
+		            scrollwheel: true,
+		            panControl: true,
+		            streetViewControl: true,
+		            draggable : true,
+		            overviewMapControl: true,
+		            overviewMapControlOptions: {
+		                opened: false,
+		            },
+		            mapTypeId: google.maps.MapTypeId.ROADMAP,
+		            styles: [
+		    {
+		        "featureType": "water",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#b5cbe4"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "landscape",
+		        "stylers": [
+		            {
+		                "color": "#efefef"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.highway",
+		        "elementType": "geometry",
+		        "stylers": [
+		            {
+		                "color": "#83a5b0"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.arterial",
+		        "elementType": "geometry",
+		        "stylers": [
+		            {
+		                "color": "#bdcdd3"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.local",
+		        "elementType": "geometry",
+		        "stylers": [
+		            {
+		                "color": "#ffffff"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi.park",
+		        "elementType": "geometry",
+		        "stylers": [
+		            {
+		                "color": "#e3eed3"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "administrative",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "lightness": 33
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road"
+		    },
+		    {
+		        "featureType": "poi.park",
+		        "elementType": "labels",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "lightness": 20
+		            }
+		        ]
+		    },
+		    {},
+		    {
+		        "featureType": "road",
+		        "stylers": [
+		            {
+		                "lightness": 20
+		            }
+		        ]
+		    }
+		],
+		        }
+		        var mapElement = document.getElementById('Nadya_S_map');
+		        var map = new google.maps.Map(mapElement, mapOptions);
+		        var locations = [
+		['HUDPROM', '', 'undefined', 'undefined', 'undefined', 49.999378, 36.24559399999998, 'https://mapbuildr.com/assets/img/markers/default.png']
+		        ];
+		        for (i = 0; i < locations.length; i++) {
+					if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+					if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+					if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+		           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+		           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+		            marker = new google.maps.Marker({
+		                icon: markericon,
+		                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+		                map: map,
+		                title: locations[i][0],
+		                desc: description,
+		                tel: telephone,
+		                email: email,
+		                web: web
+		            });
+		link = '';     }
+
+		}
+		</script>
+		
+
+
+
+</body>
+</html>
